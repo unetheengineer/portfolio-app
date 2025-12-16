@@ -1,0 +1,105 @@
+/* ============================================
+   SOCIAL CARD COMPONENT
+   ============================================ */
+
+.social-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-card--no-container {
+    display: block;
+}
+
+.social-card__grid {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+/* Column variants */
+.social-card--cols-1 .social-card__grid {
+    grid-template-columns: 1fr;
+}
+
+.social-card--cols-2 .social-card__grid {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.social-card--cols-3 .social-card__grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.social-card--cols-4 .social-card__grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Row variants - fixed number of rows */
+.social-card--rows-1 .social-card__grid {
+    grid-template-rows: 1fr;
+}
+
+.social-card--rows-2 .social-card__grid {
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.social-card--rows-3 .social-card__grid {
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.social-card--rows-4 .social-card__grid {
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.social-card__link {
+    text-decoration: none;
+    display: flex;
+}
+
+.social-card__link .ui-icon-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-lg);
+}
+
+.social-card__link .ui-icon-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* No container - stretch to fill parent height */
+.social-card--no-container {
+    height: 100%;
+}
+
+.social-card--no-container .social-card__grid {
+    height: 100%;
+    gap: var(--spacing-md);
+}
+
+.social-card--no-container .social-card__link {
+    flex: 1;
+    aspect-ratio: 1 / 1;
+}
+
+.social-card--no-container .social-card__link .ui-icon-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+}
+
+.social-card--no-container .social-card__link .ui-icon-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Mobile responsive - 4 columns 1 row */
+@media (max-width: 768px) {
+    .social-card--no-container .social-card__grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr;
+    }
+}

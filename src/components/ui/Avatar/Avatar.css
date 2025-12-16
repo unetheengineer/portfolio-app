@@ -1,0 +1,64 @@
+/* ============================================
+   AVATAR COMPONENT
+   ============================================ */
+
+.ui-avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background: var(--gradient-primary);
+    color: var(--color-text-on-color);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-semibold);
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.ui-avatar--sm {
+    width: 32px;
+    height: 32px;
+    font-size: var(--font-size-xs);
+}
+
+.ui-avatar--md {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-sm);
+}
+
+.ui-avatar--lg {
+    width: 56px;
+    height: 56px;
+    font-size: var(--font-size-base);
+}
+
+.ui-avatar--xl {
+    width: 80px;
+    height: 80px;
+    font-size: var(--font-size-xl);
+}
+
+/* ============================================
+   ELEMENTS
+   ============================================ */
+
+.ui-avatar__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ui-avatar__initials {
+    line-height: 1;
+}
+
+.ui-avatar__placeholder {
+    width: 60%;
+    height: 60%;
+    opacity: 0.8;
+}

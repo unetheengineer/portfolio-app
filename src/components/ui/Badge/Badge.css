@@ -1,0 +1,102 @@
+/* ============================================
+   BADGE COMPONENT
+   ============================================ */
+
+.ui-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.02em;
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.ui-badge--sm {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-xs);
+}
+
+.ui-badge--md {
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   SOLID VARIANTS
+   ============================================ */
+
+.ui-badge--default {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+}
+
+.ui-badge--primary {
+    background: var(--color-primary);
+    color: var(--color-text-on-color);
+}
+
+.ui-badge--accent {
+    background: var(--color-accent);
+    color: var(--color-text-on-color);
+}
+
+.ui-badge--success {
+    background: var(--color-success);
+    color: var(--color-text-on-color);
+}
+
+.ui-badge--warning {
+    background: var(--color-warning);
+    color: #000;
+}
+
+.ui-badge--error {
+    background: var(--color-error);
+    color: var(--color-text-on-color);
+}
+
+/* ============================================
+   GLASS VARIANT
+   ============================================ */
+
+.ui-badge--glass {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+[data-theme="light"] .ui-badge--glass {
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* ============================================
+   GRADIENT VARIANT
+   ============================================ */
+
+.ui-badge--gradient {
+    background: var(--gradient-primary);
+    color: var(--color-text-on-color);
+    border: none;
+}
+
+.ui-badge--gradient-secondary {
+    background: var(--gradient-secondary);
+    color: var(--color-text-on-color);
+    border: none;
+}
+
+.ui-badge--gradient-tertiary {
+    background: var(--gradient-tertiary);
+    color: var(--color-text-primary);
+    border: none;
+}

@@ -1,0 +1,108 @@
+/* ============================================
+   BUTTON COMPONENT - Modern & Minimal
+   ============================================ */
+
+.ui-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.ui-btn:focus-visible {
+    box-shadow: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-primary);
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.ui-btn--sm {
+    height: 32px;
+    padding: 0 var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.ui-btn--md {
+    height: 40px;
+    padding: 0 var(--spacing-lg);
+    font-size: var(--font-size-base);
+}
+
+.ui-btn--lg {
+    height: 48px;
+    padding: 0 var(--spacing-xl);
+    font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+/* Primary */
+.ui-btn--primary {
+    background: var(--color-primary);
+    color: var(--color-text-on-color);
+}
+
+.ui-btn--primary:hover:not(:disabled) {
+    background: var(--color-primary-hover);
+    transform: translateY(-1px);
+}
+
+.ui-btn--primary:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Secondary */
+.ui-btn--secondary {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+.ui-btn--secondary:hover:not(:disabled) {
+    background: var(--color-bg-tertiary);
+}
+
+/* Ghost */
+.ui-btn--ghost {
+    background: transparent;
+    color: var(--color-text-primary);
+}
+
+.ui-btn--ghost:hover:not(:disabled) {
+    background: var(--color-bg-secondary);
+}
+
+/* Outline */
+.ui-btn--outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.ui-btn--outline:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: var(--color-text-on-color);
+}
+
+/* ============================================
+   STATES
+   ============================================ */
+
+.ui-btn--full {
+    width: 100%;
+}
+
+.ui-btn--disabled,
+.ui-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

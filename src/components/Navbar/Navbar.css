@@ -1,0 +1,245 @@
+/* ============================================
+   NAVBAR COMPONENT
+   ============================================ */
+
+.navbar {
+    width: 100%;
+    padding: var(--spacing-md) 0;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-xl);
+}
+
+/* ============================================
+   STICKY
+   ============================================ */
+
+.navbar--sticky {
+    position: sticky;
+    top: 0;
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+/* Solid */
+.navbar--solid {
+    background: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
+}
+
+/* Glass */
+.navbar--glass {
+    background: rgba(var(--color-bg-secondary-rgb, 26, 26, 46), 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Transparent */
+.navbar--transparent {
+    background: transparent;
+}
+
+/* ============================================
+   BRAND
+   ============================================ */
+
+.navbar__brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__logo svg,
+.navbar__logo img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.navbar__brand-name {
+    font-family: var(--font-family);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    letter-spacing: -0.02em;
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+.navbar__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__nav-item {
+    margin: 0;
+}
+
+.navbar__nav-link {
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    position: relative;
+}
+
+.navbar__nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: all var(--transition-fast);
+    transform: translateX(-50%);
+}
+
+.navbar__nav-link:hover {
+    color: var(--color-text-primary);
+}
+
+.navbar__nav-link:hover::after {
+    width: 60%;
+}
+
+.navbar__nav-link--active {
+    color: var(--color-text-primary);
+}
+
+.navbar__nav-link--active::after {
+    width: 60%;
+}
+
+/* ============================================
+   RIGHT SIDE CONTAINER
+   ============================================ */
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.navbar__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+/* ============================================
+   LANGUAGE SWITCHER
+   ============================================ */
+
+.navbar__lang-switcher {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-full);
+    padding: 2px;
+}
+
+.navbar__lang-btn {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: none;
+    border-radius: var(--radius-full);
+    background: transparent;
+    color: var(--color-text-secondary);
+    font-family: var(--font-family);
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-medium);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.navbar__lang-btn:hover {
+    color: var(--color-text-primary);
+}
+
+.navbar__lang-btn--active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* ============================================
+   THEME TOGGLE
+   ============================================ */
+
+.navbar__theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: var(--radius-full);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--color-text-primary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.navbar__theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: rotate(15deg);
+}
+
+.navbar__theme-toggle svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .navbar__container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .navbar__nav {
+        display: none;
+    }
+
+    .navbar__brand-name {
+        font-size: var(--font-size-base);
+    }
+
+    .navbar__right {
+        gap: var(--spacing-sm);
+    }
+
+    /* Hide contact button on mobile */
+    .navbar__actions {
+        display: none;
+    }
+}

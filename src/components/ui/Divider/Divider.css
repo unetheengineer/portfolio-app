@@ -1,0 +1,68 @@
+/* ============================================
+   DIVIDER COMPONENT
+   ============================================ */
+
+.ui-divider {
+    border: none;
+    margin: 0;
+}
+
+/* ============================================
+   ORIENTATION
+   ============================================ */
+
+.ui-divider--horizontal {
+    width: 100%;
+    height: 1px;
+}
+
+.ui-divider--vertical {
+    width: 1px;
+    height: 100%;
+    min-height: 20px;
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.ui-divider--default {
+    background: var(--color-border);
+}
+
+.ui-divider--subtle {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+[data-theme="light"] .ui-divider--subtle {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.ui-divider--strong {
+    background: var(--color-border-hover);
+}
+
+/* ============================================
+   WITH TEXT
+   ============================================ */
+
+.ui-divider--with-text {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    background: transparent;
+    height: auto;
+}
+
+.ui-divider__line {
+    flex: 1;
+    height: 1px;
+    background: var(--color-border);
+}
+
+.ui-divider__text {
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    white-space: nowrap;
+}

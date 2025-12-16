@@ -1,0 +1,166 @@
+/* ============================================
+   TEXTAREA COMPONENT
+   ============================================ */
+
+.ui-textarea {
+    width: 100%;
+    font-family: var(--font-family);
+    border-radius: var(--radius-lg);
+    outline: none;
+    resize: vertical;
+    transition: all var(--transition-fast);
+}
+
+.ui-textarea::placeholder {
+    color: var(--color-text-muted);
+}
+
+.ui-textarea:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.ui-textarea--sm {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+}
+
+.ui-textarea--md {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+}
+
+.ui-textarea--lg {
+    padding: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.ui-textarea--default {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.ui-textarea--default:hover:not(:disabled):not(:focus) {
+    border-color: var(--color-border-hover);
+}
+
+.ui-textarea--filled {
+    background: var(--color-bg-tertiary);
+    border: 2px solid transparent;
+    color: var(--color-text-primary);
+}
+
+.ui-textarea--filled:focus {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-primary);
+}
+
+.ui-textarea--ghost {
+    background: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+}
+
+.ui-textarea--ghost:focus {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Glass variant */
+.ui-textarea--glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-text-primary);
+}
+
+.ui-textarea--glass:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.ui-textarea--glass:hover:not(:disabled):not(:focus) {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="light"] .ui-textarea--glass {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .ui-textarea--glass:focus {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: var(--color-primary);
+}
+
+/* Gradient variant */
+.ui-textarea--gradient {
+    background: var(--gradient-primary);
+    border: none;
+    color: var(--color-text-on-color);
+}
+
+.ui-textarea--gradient-secondary {
+    background: var(--gradient-secondary);
+    border: none;
+    color: var(--color-text-on-color);
+}
+
+.ui-textarea--gradient-tertiary {
+    background: var(--gradient-tertiary);
+    border: none;
+    color: var(--color-text-primary);
+}
+
+.ui-textarea--gradient::placeholder,
+.ui-textarea--gradient-secondary::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.ui-textarea--gradient-tertiary::placeholder {
+    color: var(--color-text-muted);
+}
+
+.ui-textarea--gradient:focus,
+.ui-textarea--gradient-secondary:focus,
+.ui-textarea--gradient-tertiary:focus {
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+/* ============================================
+   STATES
+   ============================================ */
+
+.ui-textarea--error {
+    border-color: var(--color-error) !important;
+}
+
+.ui-textarea--error:focus {
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.ui-textarea--glow {
+    box-shadow: var(--shadow-glow);
+}
+
+.ui-textarea--glow:focus {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+}
+
+.ui-textarea--disabled,
+.ui-textarea:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    resize: none;
+}

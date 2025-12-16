@@ -1,0 +1,286 @@
+/* ============================================
+   SKILLS CARD COMPONENT
+   ============================================ */
+
+.skills-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+}
+
+/* ============================================
+   GRID VARIANT (Default)
+   ============================================ */
+
+.skills-card__grid {
+    display: grid;
+    gap: var(--spacing-sm);
+    flex: 1;
+    align-content: start;
+}
+
+.skills-card__skill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.skills-card__skill:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: scale(1.1);
+}
+
+.skills-card__skill svg,
+.skills-card__skill img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+/* ============================================
+   ORBITAL VARIANT (3D Rotating Orbit)
+   ============================================ */
+
+.skills-card--orbital {
+    min-height: 320px;
+    overflow: hidden;
+}
+
+.skills-card__orbital {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 250px;
+    width: 100%;
+    overflow: hidden;
+    perspective: 800px;
+    padding: var(--spacing-lg);
+}
+
+/* Center skill (fixed, not rotating) - positioned top-left */
+.skills-card__center-skill {
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-hover));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow:
+        0 0 40px rgba(var(--color-primary-rgb, 100, 100, 255), 0.5),
+        0 0 80px rgba(var(--color-primary-rgb, 100, 100, 255), 0.3);
+    transform: translate(-50%, -50%);
+}
+
+.skills-card__center-skill svg,
+.skills-card__center-skill img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Orbit ring container - rotates around center */
+.skills-card__orbit-ring {
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+}
+
+/* Inner orbit - smallest, fastest */
+.skills-card__orbit-ring--inner {
+    width: 180px;
+    height: 180px;
+    animation: orbit-spin 15s linear infinite;
+}
+
+.skills-card__orbit-ring--inner .skills-card__orbiting-skill {
+    --orbit-radius: 90px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--orbit-radius));
+}
+
+.skills-card__orbit-ring--inner .skills-card__skill-icon {
+    animation: counter-rotate-15s 15s linear infinite;
+}
+
+/* Middle orbit - medium size, medium speed, reverse direction */
+.skills-card__orbit-ring--middle {
+    width: 280px;
+    height: 280px;
+    animation: orbit-spin 22s linear infinite reverse;
+}
+
+.skills-card__orbit-ring--middle .skills-card__orbiting-skill {
+    --orbit-radius: 140px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--orbit-radius));
+}
+
+.skills-card__orbit-ring--middle .skills-card__skill-icon {
+    animation: counter-rotate-22s-reverse 22s linear infinite;
+}
+
+/* Outer orbit - largest, slowest */
+.skills-card__orbit-ring--outer {
+    width: 380px;
+    height: 380px;
+    animation: orbit-spin 30s linear infinite;
+}
+
+.skills-card__orbit-ring--outer .skills-card__orbiting-skill {
+    --orbit-radius: 190px;
+    transform: translate(-50%, -50%) rotate(var(--angle)) translateX(var(--orbit-radius));
+}
+
+.skills-card__orbit-ring--outer .skills-card__skill-icon {
+    animation: counter-rotate-30s 30s linear infinite;
+}
+
+/* Orbiting skill wrapper - positioned on the ring */
+.skills-card__orbiting-skill {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+
+    /* Position on orbit using CSS calc */
+    --angle: calc(360deg / var(--skill-total) * var(--skill-index));
+    left: 50%;
+    top: 50%;
+}
+
+/* Skill icon - counter-rotates to stay upright */
+.skills-card__skill-icon {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    /* Initial counter-rotate to cancel out the angle positioning */
+    transform: rotate(calc(-1 * var(--angle)));
+}
+
+.skills-card__skill-icon:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.skills-card__skill-icon svg,
+.skills-card__skill-icon img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+/* Keyframes */
+@keyframes orbit-spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Counter-rotate animations - keeps icons upright */
+@keyframes counter-rotate-15s {
+    from {
+        transform: rotate(calc(-1 * var(--angle)));
+    }
+
+    to {
+        transform: rotate(calc(-1 * var(--angle) - 360deg));
+    }
+}
+
+@keyframes counter-rotate-22s-reverse {
+    from {
+        transform: rotate(calc(-1 * var(--angle)));
+    }
+
+    to {
+        transform: rotate(calc(-1 * var(--angle) + 360deg));
+    }
+}
+
+@keyframes counter-rotate-30s {
+    from {
+        transform: rotate(calc(-1 * var(--angle)));
+    }
+
+    to {
+        transform: rotate(calc(-1 * var(--angle) - 360deg));
+    }
+}
+
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.skills-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: auto;
+    padding-top: var(--spacing-md);
+}
+
+.skills-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.skills-card__title {
+    font-family: var(--font-family);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .skills-card__grid {
+        gap: var(--spacing-xs);
+    }
+
+    .skills-card__footer {
+        padding-top: var(--spacing-sm);
+    }
+
+    .skills-card__skill {
+        padding: var(--spacing-xs);
+    }
+
+    .skills-card__skill svg,
+    .skills-card__skill img {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* Reduce overall card padding on mobile */
+    .skills-card .ui-card--padding-lg {
+        padding: var(--spacing-md);
+    }
+}

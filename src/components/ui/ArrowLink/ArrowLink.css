@@ -1,0 +1,165 @@
+/* ============================================
+   ARROW LINK COMPONENT
+   ============================================ */
+
+.ui-arrow-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all 0.6s ease-out;
+    text-decoration: none;
+    gap: 0;
+    overflow: hidden;
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.ui-arrow-link--sm {
+    width: 28px;
+    height: 28px;
+}
+
+.ui-arrow-link--sm .ui-arrow-link__icon {
+    width: 14px;
+    height: 14px;
+}
+
+.ui-arrow-link--md {
+    width: 36px;
+    height: 36px;
+}
+
+.ui-arrow-link--md .ui-arrow-link__icon {
+    width: 18px;
+    height: 18px;
+}
+
+.ui-arrow-link--lg {
+    width: 44px;
+    height: 44px;
+}
+
+.ui-arrow-link--lg .ui-arrow-link__icon {
+    width: 22px;
+    height: 22px;
+}
+
+/* ============================================
+   ICON & LABEL
+   ============================================ */
+
+.ui-arrow-link__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform var(--transition-fast);
+}
+
+.ui-arrow-link__icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.ui-arrow-link__label {
+    font-size: 0.875rem;
+    font-weight: var(--font-weight-medium);
+    white-space: nowrap;
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.ui-arrow-link--default {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+}
+
+.ui-arrow-link--default:hover {
+    background: var(--color-primary);
+}
+
+.ui-arrow-link--default:hover .ui-arrow-link__icon {
+    transform: rotate(45deg);
+}
+
+.ui-arrow-link--primary {
+    background: var(--color-primary);
+    color: var(--color-text-on-color);
+}
+
+.ui-arrow-link--primary:hover {
+    background: var(--color-primary-hover);
+}
+
+.ui-arrow-link--primary:hover .ui-arrow-link__icon {
+    transform: rotate(45deg);
+}
+
+.ui-arrow-link--glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ui-arrow-link--glass:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.ui-arrow-link--glass:hover .ui-arrow-link__icon {
+    transform: rotate(45deg);
+}
+
+/* ============================================
+   EXPANDABLE MODE
+   ============================================ */
+
+.ui-arrow-link--expandable {
+    padding: 0 var(--spacing-sm);
+}
+
+.ui-arrow-link--expandable:hover {
+    width: auto;
+    gap: var(--spacing-xs);
+    padding: 0 var(--spacing-md);
+}
+
+/* Opening: fast and smooth */
+.ui-arrow-link--expandable:hover .ui-arrow-link__label {
+    max-width: 200px;
+    opacity: 1;
+    transition: max-width 0.3s ease-out, opacity 0.2s ease-out 0.1s;
+}
+
+/* Closing: fade out first, then shrink */
+.ui-arrow-link--expandable .ui-arrow-link__label {
+    transition: opacity 0.15s ease-in, max-width 0.4s ease-in 0.1s;
+}
+
+/* Size adjustments for expandable */
+.ui-arrow-link--expandable.ui-arrow-link--sm {
+    min-width: 28px;
+    min-height: 28px;
+}
+
+.ui-arrow-link--expandable.ui-arrow-link--md {
+    min-width: 36px;
+    min-height: 36px;
+}
+
+.ui-arrow-link--expandable.ui-arrow-link--lg {
+    min-width: 44px;
+    min-height: 44px;
+}

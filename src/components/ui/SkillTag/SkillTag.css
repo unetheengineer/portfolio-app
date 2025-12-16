@@ -1,0 +1,148 @@
+/* ============================================
+   SKILL TAG - BAR-FREE SKILL DISPLAY
+   ============================================ */
+
+.ui-skill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    border-radius: var(--radius-full);
+    transition: all var(--transition-fast);
+    white-space: nowrap;
+}
+
+/* Sizes */
+.ui-skill-tag--sm {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: var(--font-size-xs);
+}
+
+.ui-skill-tag--md {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.ui-skill-tag--lg {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-base);
+}
+
+/* Variants */
+.ui-skill-tag--default {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border);
+}
+
+.ui-skill-tag--primary {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark, var(--color-primary)));
+    color: var(--color-text-on-color);
+    border: none;
+}
+
+.ui-skill-tag--secondary {
+    background: var(--color-bg-tertiary);
+    color: var(--color-text-secondary);
+    border: 1px solid transparent;
+}
+
+.ui-skill-tag--outline {
+    background: transparent;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+}
+
+.ui-skill-tag--glass {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Hover Effects */
+.ui-skill-tag--hoverable:hover {
+    transform: translateY(-2px);
+}
+
+.ui-skill-tag--default.ui-skill-tag--hoverable:hover {
+    background: var(--color-bg-tertiary);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ui-skill-tag--primary.ui-skill-tag--hoverable:hover {
+    box-shadow: 0 4px 16px rgba(var(--color-primary-rgb, 99, 102, 241), 0.4);
+}
+
+.ui-skill-tag--secondary.ui-skill-tag--hoverable:hover {
+    background: var(--color-bg-secondary);
+    color: var(--color-text-primary);
+}
+
+.ui-skill-tag--outline.ui-skill-tag--hoverable:hover {
+    background: var(--color-primary);
+    color: var(--color-text-on-color);
+}
+
+.ui-skill-tag--glass.ui-skill-tag--hoverable:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Clickable */
+.ui-skill-tag--clickable {
+    cursor: pointer;
+}
+
+.ui-skill-tag--clickable:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Icon */
+.ui-skill-tag__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1em;
+}
+
+.ui-skill-tag__name {
+    line-height: 1;
+}
+
+/* ============================================
+   SKILL TAG LIST
+   ============================================ */
+
+.ui-skill-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Direction */
+.ui-skill-tag-list--horizontal {
+    flex-direction: row;
+}
+
+.ui-skill-tag-list--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Gap */
+.ui-skill-tag-list--gap-sm {
+    gap: var(--spacing-xs);
+}
+
+.ui-skill-tag-list--gap-md {
+    gap: var(--spacing-sm);
+}
+
+.ui-skill-tag-list--gap-lg {
+    gap: var(--spacing-md);
+}

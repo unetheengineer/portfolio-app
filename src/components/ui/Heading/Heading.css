@@ -1,0 +1,58 @@
+/* ============================================
+   HEADING COMPONENT
+   ============================================ */
+
+.ui-heading {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text-primary);
+    line-height: var(--line-height-tight);
+    margin: 0;
+}
+
+/* ============================================
+   LEVELS
+   ============================================ */
+
+.ui-heading--h1 {
+    font-size: var(--font-size-4xl);
+}
+
+.ui-heading--h2 {
+    font-size: var(--font-size-3xl);
+}
+
+.ui-heading--h3 {
+    font-size: var(--font-size-2xl);
+}
+
+.ui-heading--h4 {
+    font-size: var(--font-size-xl);
+}
+
+.ui-heading--h5 {
+    font-size: var(--font-size-lg);
+}
+
+.ui-heading--h6 {
+    font-size: var(--font-size-base);
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.ui-heading--default {
+    color: var(--color-text-primary);
+}
+
+.ui-heading--gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ui-heading--accent {
+    color: var(--color-accent);
+}

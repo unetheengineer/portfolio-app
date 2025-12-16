@@ -1,0 +1,46 @@
+/* ============================================
+   LABEL COMPONENT
+   ============================================ */
+
+.ui-label {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 0.05em;
+    line-height: 1;
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.ui-label--sm {
+    font-size: var(--font-size-xs);
+}
+
+.ui-label--md {
+    font-size: var(--font-size-sm);
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.ui-label--default {
+    color: var(--color-text-secondary);
+}
+
+.ui-label--primary {
+    color: var(--color-primary);
+}
+
+.ui-label--accent {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   MODIFIERS
+   ============================================ */
+
+.ui-label--uppercase {
+    text-transform: uppercase;
+}

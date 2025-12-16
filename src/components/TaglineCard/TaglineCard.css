@@ -1,0 +1,36 @@
+/* ============================================
+   TAGLINE CARD COMPONENT
+   ============================================ */
+
+.tagline-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+}
+
+.tagline-card__content {
+    text-align: left;
+}
+
+.tagline-card__content .ui-heading {
+    font-size: var(--font-size-3xl);
+    line-height: var(--line-height-tight);
+    max-width: 300px;
+    color: var(--color-text-primary);
+}
+
+/* Gradient heading uses theme gradient */
+.tagline-card__content .ui-heading--gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .tagline-card__content .ui-heading {
+        font-size: var(--font-size-2xl);
+    }
+}

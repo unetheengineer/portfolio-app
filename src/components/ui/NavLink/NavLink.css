@@ -1,0 +1,41 @@
+/* ============================================
+   NAV LINK COMPONENT
+   ============================================ */
+
+.ui-nav-link {
+    font-family: var(--font-family);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    position: relative;
+    padding: var(--spacing-xs) 0;
+    transition: color var(--transition-fast);
+}
+
+.ui-nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary);
+    transition: width var(--transition-base);
+}
+
+.ui-nav-link:hover {
+    color: var(--color-text-primary);
+}
+
+.ui-nav-link:hover::after {
+    width: 100%;
+}
+
+.ui-nav-link--active {
+    color: var(--color-text-primary);
+}
+
+.ui-nav-link--active::after {
+    width: 100%;
+}

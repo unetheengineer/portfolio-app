@@ -1,0 +1,50 @@
+/* ============================================
+   TEXT COMPONENT
+   ============================================ */
+
+.ui-text {
+    font-family: var(--font-family);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    margin: 0;
+}
+
+/* ============================================
+   SIZES
+   ============================================ */
+
+.ui-text--xs {
+    font-size: var(--font-size-xs);
+}
+
+.ui-text--sm {
+    font-size: var(--font-size-sm);
+}
+
+.ui-text--md {
+    font-size: var(--font-size-base);
+}
+
+.ui-text--lg {
+    font-size: var(--font-size-lg);
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.ui-text--primary {
+    color: var(--color-text-primary);
+}
+
+.ui-text--secondary {
+    color: var(--color-text-secondary);
+}
+
+.ui-text--muted {
+    color: var(--color-text-muted);
+}
+
+.ui-text--accent {
+    color: var(--color-text-accent);
+}

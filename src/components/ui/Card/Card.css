@@ -1,0 +1,129 @@
+/* ============================================
+   CARD COMPONENT
+   ============================================ */
+
+.ui-card {
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   VARIANTS
+   ============================================ */
+
+.ui-card--default {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+}
+
+.ui-card--elevated {
+    background: var(--color-bg-secondary);
+    box-shadow: var(--shadow-lg);
+}
+
+.ui-card--outlined {
+    background: transparent;
+    border: 1px solid var(--color-border);
+}
+
+.ui-card--glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--color-text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .ui-card--glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ui-card--gradient {
+    background: var(--gradient-primary);
+    border: none;
+    color: var(--color-text-on-color);
+}
+
+.ui-card--gradient-secondary {
+    background: var(--gradient-secondary);
+    border: none;
+    color: var(--color-text-on-color);
+}
+
+.ui-card--gradient-tertiary {
+    background: var(--gradient-tertiary);
+    border: none;
+    color: var(--color-text-primary);
+}
+
+.ui-card--gradient.ui-card--hoverable:hover,
+.ui-card--gradient-secondary.ui-card--hoverable:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+}
+
+.ui-card--gradient-tertiary.ui-card--hoverable:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* ============================================
+   PADDING
+   ============================================ */
+
+.ui-card--padding-none {
+    padding: 0;
+}
+
+.ui-card--padding-sm {
+    padding: var(--spacing-sm);
+}
+
+.ui-card--padding-md {
+    padding: var(--spacing-md);
+}
+
+.ui-card--padding-lg {
+    padding: var(--spacing-lg);
+}
+
+/* ============================================
+   STATES
+   ============================================ */
+
+.ui-card--hoverable:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-border-hover);
+}
+
+.ui-card--glass.ui-card--hoverable:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="light"] .ui-card--glass.ui-card--hoverable:hover {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ui-card--glow {
+    box-shadow: var(--shadow-glow);
+}
+
+.ui-card--glow:hover {
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+}
+
+.ui-card--clickable {
+    cursor: pointer;
+}

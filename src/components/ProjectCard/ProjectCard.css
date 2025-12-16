@@ -1,0 +1,308 @@
+/* ============================================
+   PROJECT CARD COMPONENT
+   Fully responsive - adapts to width & height
+   ============================================ */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.5rem, 2vw, 1rem);
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   GALLERY - Responsive scroll container
+   ============================================ */
+
+.project-card__gallery {
+    display: flex;
+    gap: clamp(0.25rem, 1vw, 0.5rem);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    /* Fade mask on edges */
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 3%,
+            black 97%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 3%,
+            black 97%,
+            transparent 100%);
+}
+
+/* Hide scrollbar but keep functionality */
+.project-card__gallery {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+}
+
+.project-card__gallery::-webkit-scrollbar {
+    height: 3px;
+}
+
+.project-card__gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-card__gallery::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+    border-radius: 3px;
+}
+
+/* ============================================
+   PROJECT ITEM - Fluid width
+   ============================================ */
+
+.project-card__item {
+    position: relative;
+    /* Fluid: shows 2-3 items based on container */
+    flex: 0 0 clamp(80px, 30%, 140px);
+    scroll-snap-align: start;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: transform var(--transition-fast);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.project-card__item:hover {
+    transform: scale(1.03);
+}
+
+.project-card__item .ui-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+/* Overlay */
+.project-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: clamp(0.25rem, 1vw, 0.5rem);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.project-card__item:hover .project-card__overlay {
+    opacity: 1;
+}
+
+.project-card__project-title {
+    font-size: clamp(0.625rem, 2vw, 0.75rem);
+    font-weight: var(--font-weight-medium);
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ============================================
+   FOOTER - Fluid spacing
+   ============================================ */
+
+.project-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.project-card__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+    flex: 1;
+}
+
+.project-card__title {
+    font-size: clamp(0.875rem, 3vw, 1.125rem);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ============================================
+   CAROUSEL MODE
+   ============================================ */
+
+.project-card--carousel {
+    gap: clamp(0.75rem, 2vw, 1rem);
+}
+
+.project-card__carousel {
+    position: relative;
+    width: 100%;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+/* Slider Track - contains all slides */
+.project-card__carousel-track {
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+/* Slides Container - moves horizontally */
+.project-card__carousel-slides {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Disable transition for instant jump (infinite loop) */
+.project-card__carousel-slides.no-transition {
+    transition: none;
+}
+
+/* Individual Slide */
+.project-card__carousel-slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.project-card__carousel-slide a {
+    display: block;
+}
+
+.project-card__carousel-slide .ui-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.project-card__carousel:hover .project-card__carousel-slide .ui-image {
+    transform: scale(1.02);
+}
+
+/* Carousel Hover Overlay */
+.project-card__carousel-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--spacing-lg);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 15;
+}
+
+.project-card__carousel-slide:hover .project-card__carousel-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card__carousel-title {
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: var(--font-weight-semibold);
+    color: white;
+    margin: 0 0 var(--spacing-xs) 0;
+}
+
+.project-card__carousel-description {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    line-height: var(--line-height-relaxed);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Navigation Arrows */
+.project-card__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: none;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.project-card__carousel:hover .project-card__nav {
+    opacity: 1;
+}
+
+.project-card__nav:hover {
+    color: white;
+}
+
+.project-card__nav--prev {
+    left: 12px;
+}
+
+.project-card__nav--next {
+    right: 12px;
+}
+
+/* Dots Indicator */
+.project-card__dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 10;
+}
+
+.project-card__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.project-card__dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.project-card__dot--active {
+    background: white;
+    transform: scale(1.2);
+}
