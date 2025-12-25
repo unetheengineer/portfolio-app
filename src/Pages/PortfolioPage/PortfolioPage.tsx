@@ -30,7 +30,16 @@ export const PortfolioPage = ({
 }: PortfolioPageProps) => {
     const { language, setLanguage, t } = useLanguage();
     const { data, loading, error } = usePortfolioData(language || defaultLanguage);
-    const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+    // Tarayıcı temasını algıla
+    const getBrowserTheme = (): 'dark' | 'light' => {
+        if (typeof window !== 'undefined' && window.matchMedia) {
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        return 'dark';
+    };
+
+    const [theme, setTheme] = useState<'dark' | 'light'>(getBrowserTheme);
     const classes = ['portfolio-page', className].filter(Boolean).join(' ');
 
     // Apply theme to document
