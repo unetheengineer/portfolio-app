@@ -5,46 +5,15 @@
    [data-theme="light"] = LIGHT theme
    ============================================ */
 
+/* Renk paletini import et - Temayı değiştirmek için colors.css dosyasını düzenleyin */
+@import './colors.css';
+
 :root {
     /* ==========================================
-     PRIMARY COLORS
+     EXTENDED COLOR TOKENS (derived from colors.css)
      ========================================== */
-    --color-primary: #6366f1;
-    --color-primary-hover: #4f46e5;
-    --color-primary-light: #818cf8;
-    --color-primary-dark: #4338ca;
-
-    /* ==========================================
-     SECONDARY COLORS
-     ========================================== */
-    --color-secondary: #8b5cf6;
-    --color-secondary-hover: #7c3aed;
-    --color-secondary-light: #a78bfa;
-    --color-secondary-dark: #6d28d9;
-
-    /* ==========================================
-     ACCENT COLORS
-     ========================================== */
-    --color-accent: #06b6d4;
-    --color-accent-hover: #0891b2;
-    --color-accent-light: #22d3ee;
-    --color-accent-dark: #0e7490;
-
-    /* ==========================================
-     BACKGROUND COLORS - DARK THEME
-     ========================================== */
-    --color-bg-primary: #0f0f23;
-    --color-bg-secondary: #1a1a2e;
-    --color-bg-tertiary: #252542;
     --color-bg-card: rgba(26, 26, 46, 0.8);
     --color-bg-overlay: rgba(0, 0, 0, 0.5);
-
-    /* ==========================================
-     TEXT COLORS - LIGHT TEXT FOR DARK BG
-     ========================================== */
-    --color-text-primary: #ffffff;
-    --color-text-secondary: #a0a0b0;
-    --color-text-muted: #6b6b80;
     --color-text-accent: var(--color-accent);
     --color-text-on-color: #ffffff;
 
@@ -54,14 +23,6 @@
     --color-border: rgba(255, 255, 255, 0.1);
     --color-border-hover: rgba(255, 255, 255, 0.2);
     --color-border-focus: var(--color-primary);
-
-    /* ==========================================
-     STATUS COLORS
-     ========================================== */
-    --color-success: #10b981;
-    --color-warning: #f59e0b;
-    --color-error: #ef4444;
-    --color-info: #3b82f6;
 
     /* ==========================================
      GRADIENTS
@@ -145,19 +106,12 @@
 
 /* ============================================
    LIGHT THEME OVERRIDES
+   (Temel renkler colors.css'den gelir)
    ============================================ */
 [data-theme="light"] {
-    /* Background Colors - WHITE/LIGHT */
-    --color-bg-primary: #ffffff;
-    --color-bg-secondary: #f8fafc;
-    --color-bg-tertiary: #f1f5f9;
+    /* Extended tokens for light theme */
     --color-bg-card: rgba(255, 255, 255, 0.95);
     --color-bg-overlay: rgba(0, 0, 0, 0.3);
-
-    /* Text Colors - DARK for light background */
-    --color-text-primary: #1e293b;
-    --color-text-secondary: #64748b;
-    --color-text-muted: #94a3b8;
 
     /* Border Colors - darker for visibility */
     --color-border: rgba(0, 0, 0, 0.1);
@@ -168,8 +122,8 @@
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
     --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.2);
-    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.2);
-    --shadow-glow-accent: 0 0 20px rgba(6, 182, 212, 0.2);
+    --shadow-glow: 0 0 20px rgba(204, 18, 54, 0.2);
+    --shadow-glow-accent: 0 0 20px rgba(238, 180, 128, 0.2);
 }
 
 /* ============================================

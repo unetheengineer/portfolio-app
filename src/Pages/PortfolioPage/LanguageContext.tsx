@@ -9,6 +9,12 @@ interface LanguageContextType {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
+// Tarayıcı dilini algıla
+const getBrowserLanguage = (): Language => {
+    const browserLang = navigator.language.slice(0, 2).toLowerCase();
+    return browserLang === 'tr' ? 'tr' : 'en';
+};
+
 interface LanguageProviderProps {
     children: ReactNode;
     defaultLanguage?: Language;
@@ -16,7 +22,7 @@ interface LanguageProviderProps {
 
 export const LanguageProvider = ({
     children,
-    defaultLanguage = 'en'
+    defaultLanguage = getBrowserLanguage()
 }: LanguageProviderProps) => {
     const [language, setLanguage] = useState<Language>(defaultLanguage);
     const t = getTranslations(language);

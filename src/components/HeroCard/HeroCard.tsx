@@ -31,13 +31,14 @@ export const HeroCard = ({
             <div className="hero-card__content">
                 <Label size="sm" variant="default">{label}</Label>
                 <Heading level="h2" variant="default">{name}</Heading>
-                <Text size="sm" variant="secondary">{description}</Text>
+                <Text size="md" variant="secondary">{description}</Text>
             </div>
             <div className="hero-card__arrow">
                 <ArrowLink
                     href={href}
                     variant="glass"
                     size="md"
+
                     onClick={onArrowClick}
                 />
             </div>

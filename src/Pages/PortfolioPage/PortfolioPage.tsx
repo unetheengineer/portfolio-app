@@ -21,10 +21,7 @@ export interface PortfolioPageProps {
 
 // Logo icon for navbar
 const LogoIcon = () => (
-    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-        <circle cx="16" cy="16" r="14" stroke="currentColor" strokeWidth="2" />
-        <path d="M16 8L22 20H10L16 8Z" fill="currentColor" />
-    </svg>
+    <img src="/logo.svg" alt="Logo" width="32" height="32" />
 );
 
 export const PortfolioPage = ({
@@ -42,12 +39,7 @@ export const PortfolioPage = ({
     }, [theme]);
 
     // Nav items
-    const navItems = [
-        { label: t.labels.home || 'Home', href: '#', isActive: true },
-        { label: t.labels.projects || 'Projects', href: '#projects' },
-        { label: t.labels.skills || 'Skills', href: '#skills' },
-        { label: t.labels.blogs || 'Blog', href: '#blog' },
-    ];
+    const navItems = undefined;
 
     if (loading) {
         return (

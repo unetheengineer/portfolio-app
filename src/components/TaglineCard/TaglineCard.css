@@ -14,9 +14,9 @@
 }
 
 .tagline-card__content .ui-heading {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-4xl);
     line-height: var(--line-height-tight);
-    max-width: 300px;
+    max-width: 400px;
     color: var(--color-text-primary);
 }
 

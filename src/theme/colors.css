@@ -1,0 +1,47 @@
+/* ============================================
+   COLOR PALETTE
+   Bu dosyayı düzenleyerek temayı değiştirebilirsiniz.
+   Direkt kopyala-yapıştır ile çalışır!
+   ============================================ */
+
+:root {
+    --color-primary: #cc1236;
+    --color-primary-hover: #ad0f2e;
+    --color-primary-light: #ff4569;
+    --color-primary-dark: #990e29;
+    --color-secondary: #051230;
+    --color-secondary-hover: #040f29;
+    --color-accent: #eeb480;
+    --color-accent-hover: #ca996d;
+    --color-bg-primary: #0f0f23;
+    --color-bg-secondary: #1a1a2e;
+    --color-bg-tertiary: #252542;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: #c8c8d8;
+    --color-text-muted: #8a8a9a;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+}
+
+[data-theme="light"] {
+    --color-primary: #cc1236;
+    --color-primary-hover: #ad0f2e;
+    --color-primary-light: #ff4569;
+    --color-primary-dark: #990e29;
+    --color-secondary: #051230;
+    --color-secondary-hover: #040f29;
+    --color-accent: #eeb480;
+    --color-accent-hover: #ca996d;
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8f9fa;
+    --color-bg-tertiary: #e9ecef;
+    --color-text-primary: #1a1a2e;
+    --color-text-secondary: #495057;
+    --color-text-muted: #868e96;
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+}

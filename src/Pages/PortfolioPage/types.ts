@@ -6,6 +6,7 @@ export interface HeroData {
     label: string;
     name: string;
     description: string;
+    longdescription: string;
     href?: string;
 }
 

@@ -1,5 +1,5 @@
 import './SkillsCard.css';
-import { Card, Label, ArrowLink } from '../ui';
+import { Card, Label } from '../ui';
 import type { CardVariant } from '../ui/Card';
 
 export interface Skill {
@@ -27,10 +27,7 @@ export const SkillsCard = ({
     columns = 4,
     variant = 'grid',
     cardVariant = 'glass',
-    href,
-    arrowLabel,
     className = '',
-    onArrowClick
 }: SkillsCardProps) => {
     const classes = [
         'skills-card',
@@ -108,14 +105,14 @@ export const SkillsCard = ({
                     <Label size="sm" variant="default">{label}</Label>
                     <span className="skills-card__title">{title}</span>
                 </div>
-                <ArrowLink
+                {/* <ArrowLink
                     href={href}
                     variant="glass"
                     size="md"
                     label={arrowLabel}
                     expandable={!!arrowLabel}
                     onClick={onArrowClick}
-                />
+                /> */}
             </div>
         </Card>
     );
