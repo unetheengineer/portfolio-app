@@ -25,8 +25,6 @@ export const usePortfolioData = (language: Language): UsePortfolioDataResult => 
         try {
             // If no API URL configured, use mock data
             if (!API_BASE_URL) {
-                // Simulate network delay for demo
-                await new Promise(resolve => setTimeout(resolve, 300));
                 setAllData(mockPortfolioData);
                 return;
             }
